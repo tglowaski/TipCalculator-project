@@ -1,6 +1,6 @@
 # TipCalculator-project
 
-## DUE: 08 Feb 2018
+## DUE: 17 Feb 2019
 
 ## Instructions:
 

@@ -1,5 +1,5 @@
 <resources>
-
+    <string name="app_name">Tip Calculator</string>
     <string name="textLbl1">Total amount:</string>
     <string name="textLbl2">No. of people:</string>
     <string name="textLbl3">Tip percentage:</string>

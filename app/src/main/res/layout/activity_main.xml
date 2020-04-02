@@ -1,51 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/TableLayout01"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:stretchColumns="1"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <TableRow>
-        <TextView
-            android:id="@+id/txtLbl1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:text="@string/textLbl1"/>
-        <EditText
-            android:id="@+id/txtAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numeric="decimal"
-            android:layout_column="2"
-            android:layout_span="2"
-            />
-    </TableRow>
-    <TableRow>
-        <TextView
-            android:id="@+id/txtLbl2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:text="@string/textLbl2"/>
-        <EditText
-            android:id="@+id/txtPeople"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numeric="integer"
-            android:layout_column="2"
-            android:layout_span="2"/>
-    </TableRow>
-    <TableRow>
-        <TextView
-            android:id="@+id/txtLbl3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/textLbl3"/>
-    </TableRow>
-    <TableRow android:layout_height="416dp">
 
-        <RadioGroup
+    <TextView
+        android:id="@+id/txtLbl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_marginTop="36dp"
+        android:text="@string/textLbl1"
+        app:layout_constraintEnd_toStartOf="@+id/txtAmount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtAmount"
+        android:layout_width="212dp"
+        android:layout_height="36dp"
+        android:layout_column="2"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="48dp"
+        android:layout_span="2"
+        android:numeric="decimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtLbl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/textLbl2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLbl1" />
+
+    <EditText
+        android:id="@+id/txtPeople"
+        android:layout_width="207dp"
+        android:layout_height="41dp"
+        android:layout_column="2"
+        android:layout_marginTop="24dp"
+        android:layout_span="2"
+        android:numeric="integer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toEndOf="@+id/txtLbl2"
+        app:layout_constraintTop_toBottomOf="@+id/txtAmount" />
+
+    <TextView
+        android:id="@+id/txtLbl3"
+        android:layout_width="132dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/textLbl3"
+        app:layout_constraintEnd_toStartOf="@+id/radioTwenty"
+        app:layout_constraintHorizontal_bias="0.342"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLbl2" />
+
+    <RadioGroup
             android:id="@+id/RadioGroupTips"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,100 +74,145 @@
             android:checkedButton="@+id/radioFifteen"
             android:orientation="horizontal">
 
-            <RadioButton
-                android:id="@+id/radioFifteen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/rdoTxt15"
-                android:textSize="15sp" />
-
-            <RadioButton
-                android:id="@+id/radioTwenty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/rdoTxt20"
-                android:textSize="15sp" />
-
-            <RadioButton
-                android:id="@+id/radioOther"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/rdoTxtOther"
-                android:textSize="15sp" />
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/txtTipOther"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:numeric="decimal" />
-    </TableRow>
-    <TableRow>
 
-        <Button
-            android:id="@+id/btnReset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="2"
-            android:text="@string/btnReset" />
+    <EditText
+        android:id="@+id/txtTipOther"
+        android:layout_width="180dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="32dp"
+        android:numeric="decimal"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioOther"
+        app:layout_constraintVertical_bias="0.016" />
 
-        <Button
-            android:id="@+id/btnCalculate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="3"
-            android:text="@string/btnCalculate"/>
-    </TableRow>
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:layout_marginTop="52dp"
+        android:text="@string/btnReset"
+        app:layout_constraintEnd_toStartOf="@+id/txtTipOther"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioFifteen" />
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:layout_marginTop="64dp"
+        android:text="@string/btnCalculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintStart_toEndOf="@+id/txtLbl6"
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
     <View
+        android:id="@+id/view"
         android:layout_height="2px"
+        android:layout_width="2px"
         android:background="#DDFFDD"
-        android:layout_marginTop="5dip"
-        android:layout_marginBottom="5dip"/>
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="419dp" />
 
-    <TableRow android:paddingBottom="10dip" android:paddingTop="5dip">
-        <TextView
-            android:id="@+id/txtLbl4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:text="@string/textLbl4"/>
-        <TextView
+    <TextView
+        android:id="@+id/txtLbl4"
+        android:layout_width="91dp"
+        android:layout_height="17dp"
+        android:layout_column="0"
+        android:layout_marginTop="68dp"
+        android:text="@string/textLbl4"
+        app:layout_constraintEnd_toStartOf="@+id/btnCalculate"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnReset" />
+
+    <TextView
             android:id="@+id/txtTipAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="2"
             android:layout_span="2"/>
-    </TableRow>
 
-    <TableRow android:paddingBottom="10dip" android:paddingTop="5dip">
-        <TextView
-            android:id="@+id/txtLbl5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:text="@string/textLbl5"/>
-        <TextView
+    <TextView
+        android:id="@+id/txtLbl5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_marginTop="64dp"
+        android:text="@string/textLbl5"
+        app:layout_constraintTop_toBottomOf="@+id/txtLbl4"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <TextView
             android:id="@+id/txtTotalToPay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="2"
             android:layout_span="2"/>
-    </TableRow>
 
-    <TableRow android:paddingBottom="10dip" android:paddingTop="5dip">
-        <TextView
-            android:id="@+id/txtLbl6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_column="0"
-            android:text="@string/textLbl6"/>
 
-        <TextView
+    <TextView
+        android:id="@+id/txtLbl6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/textLbl6"
+        app:layout_constraintBottom_toTopOf="@+id/txtLbl5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLbl4"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
             android:id="@+id/txtTipPerPerson"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="2"
             android:layout_span="2" />
-    </TableRow>
-</TableLayout>
+
+    <RadioButton
+        android:id="@+id/radioTwenty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="52dp"
+        android:text="@string/rdoTxt20"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtTipOther"
+        app:layout_constraintEnd_toStartOf="@+id/radioOther"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnReset"
+        app:layout_constraintTop_toBottomOf="@+id/txtPeople"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <RadioButton
+        android:id="@+id/radioOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="56dp"
+        android:text="@string/rdoTxtOther"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPeople" />
+
+    <RadioButton
+        android:id="@+id/radioFifteen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/rdoTxt15"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/radioTwenty"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLbl3" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        private View.OnKeyListener mKeyListener = new View.OnKeyListener() {
+        View.OnKeyListener mKeyListener = new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         txtPeople.setOnKeyListener(mKeyListener);
         txtTipOther.setOnKeyListener(mKeyListener);
 
-        private View.OnClickListener mClickListener = new View.OnClickListener() {
+        View.OnClickListener mClickListener = new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
